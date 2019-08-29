@@ -13,9 +13,9 @@ def word_parse(text):
     word_list.append(text[low:len(text)]) # Put the last word on the list
     return word_list
 
-list1 = '1 mumble 3 mumble 5'
+list1 = '1 mumble 3 mumble 5 mumble mumble 7 8'
 
 words = word_parse(list1)
 print('Here is the list of words spoken by Vesa: {}.'.format(words))
-print('Vesa tried to count to {}.'.format(count))
+print('Vesa tried to count to {}.'.format(len(words)))
 
