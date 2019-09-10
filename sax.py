@@ -58,6 +58,9 @@ firstnote = song2[0]
 for i in finger_dict[firstnote]:
     fingerbins[i-1] += 1
 print(fingerbins)
-# Now we need t hand the rest of the key presses.   Since the fingerings are 
-# listed as sets, we can use set difference to finger out which keys were pressed. 
+# Now we need to count the rest of the key presses.   Since the fingerings are 
+# listed as sets, we can use set difference to figure out which keys were pressed.
+# Then increment the appropriate bins.  For example if e presesed after we compute
+# e - G = {2,3,4,7,8} - {1,2,3,4} = {7, 8}  
+# so the bins for 7 and 8 should be each be incremented by 1.
     
