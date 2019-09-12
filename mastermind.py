@@ -31,18 +31,10 @@ for i in range(length):
         if code[i] == guess[i]: # Is position correct.
             guessed_let[code[i]] += 1 # We used the letter.
             r += 1
-"""
-        # The code that follows needs work since letters can be repeated in the game code.
-        elif guessed_let[guess[i]] < let_dict[guess[i]]: # Do we still have letters to guess.
-            
-            guessed_let[guess[i]] += 1 # We show that used this letter.
-            s += 1
-            print(guessed_let, let_dict, s)
-            print(guessed_let[guess[i]], let_dict[guess[i]])
-            print(i, guess[i], r, s)
-"""  
-# Now we look to see if any of the other letters in correct but in the wrong position.      
+
+# Now we look to see if any of the other letters are correct but in the wrong position.      
 for i in range(length):
+    # This conditional check that the guessed letter is in the code, in the wrong position, and not yet counted.
     if guess[i] in code and code[i] != guess[i] and guessed_let[guess[i]] < let_dict[guess[i]]:
        guessed_let[guess[i]] += 1 # We show that used this letter.
        s += 1 # Increment the count of correct letters in the wrong position
