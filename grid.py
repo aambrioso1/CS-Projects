@@ -1,8 +1,8 @@
 # Counts paths to the upper right corner of a max_x by max_y grid.  For each path you may only step left or up.
 
 # Warning don't make these values much bigger.  
-max_x = 2
-max_y = 2
+max_x = 10
+max_y = 10
 
 steps = max_x + max_y # The number of steps to the corner
 
