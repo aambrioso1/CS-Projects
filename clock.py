@@ -52,6 +52,9 @@ def clock(tm):  # tm is a string representing a time in a 24-hour format.
     # colon together one line at a time.
     for i in range(7):
         print(chars[n1][i],' ', chars[n2][i], colon[i], chars[n3][i],' ', chars[n4][i])
+    print('\n')
+    print('\n')
+   
         
 # We check the progam by iterating over a list of times.
 
