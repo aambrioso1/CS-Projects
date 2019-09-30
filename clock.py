@@ -16,7 +16,7 @@ def clock(tm):  # tm is a string representing a time in a 24-hour format.
     if tm == 'end': 
         return print('end')
     
-    # We assign each digit to a variable.
+    # We assign each digit to a variable skipping the colon.
     n1 = int(tm[0])
     n2 = int(tm[1])
     n3 = int(tm[3])
