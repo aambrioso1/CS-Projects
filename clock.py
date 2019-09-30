@@ -5,7 +5,7 @@
 # http://andrew.cs.fit.edu/~cse1002-stansifer/cse2050/projects/display/
 
 # The variable tm should be a string in the form of time on a 24 hour clock. 
-# For example 01:17, 10:39, 20:41
+# For example 01:17, 10:39, or 20:41.
 
 # Note we assume the input 24-hour time strings are in the correct format.
    
