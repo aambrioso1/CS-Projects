@@ -22,7 +22,7 @@ def clock(tm):  # tm is a string representing a time in a 24-hour format.
     n3 = int(tm[3])
     n4 = int(tm[4])
     
-    # We assign the different single lines of five characters each needed to build numbers and colon for the clock
+    # We assign the different single lines of five characters needed to build each number and colon for the clock display.
     l ='+---+'    # line
     sd ='|   |'   # sides
     sp='+   +'    # side plusses
@@ -53,7 +53,7 @@ def clock(tm):  # tm is a string representing a time in a 24-hour format.
     for i in range(7):
         print(chars[n1][i],' ', chars[n2][i], colon[i], chars[n3][i],' ', chars[n4][i])
         
-# We run the progam by iterating over a list of times.
+# We check the progam by iterating over a list of times.
 
 # A list of times.        
 tm_list = ['10:28','04:20','18:28','16:39', '07:57','end']
