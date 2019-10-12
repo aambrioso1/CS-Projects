@@ -24,7 +24,7 @@ Please, follow the format carefully.
 All input is on the standard input stream; write all output to the standard output stream.
 """
 
-
+from datetime import *
 
 # Example data
 text = """
@@ -38,27 +38,40 @@ data_list = [data[i].split(',') for i in range(len(data))]
 
 
 date_list = [data_list[i][0] for i in range(1,len(data))]
-adj_close_list = [data_list[i][5] for i in range(1,len(data))]
+close_list = [float(data_list[i][5]) for i in range(2,len(data))]
 
     
-print(data_list)
-print(date_list)
-print(adj_close_list)
-value_dict = dict(zip(date_list,adj_close_list))
-print(value_dict)
+# print(data_list)
+# print(date_list)
+print('print close list:', close_list)
+# value_dict = dict(zip(date_list,close_list))
+# print(value_dict)
 
 # Create a list of percent gains for each daily pair.
 # Compute the maximum and minimum of each list.
 
+gains_list = [100.0*(close_list[i]-close_list[i-1])/close_list[i-1] for i in range(1, len(close_list))]
+
+print(gains_list)
 
 # Create function that take the input date format and produce the correct output format.
 # For example:  Input:  '2019-10-03' becomes 'Thu, 03 Oct 2019'.
-
+# Here's how we can get the proper date format
+dt = datetime.strptime("1921-11-06", "%Y-%m-%d")
+print('proper date format: ', dt.strftime('%a, %d %b %Y'))
 
 # Use list of gains to find the longest growth strength:  streak_length
-
+max_gain = max(gains_list)
+date1 = 2
+max_loss = min(gains_list)
+date2 = 4
+streak_length = 5
+date3 = 6
+date4 = 7
 
 """
 Output information in the correct format:
-print( 'Max gain: {max_gain} on {date1}\nMax loss: {maxloss} on {date2}\nLongest growth streak: {streak_length} days ({date3} to {date4})')'
-""" 
+"""
+print('*************************')
+print('Max gain: {0:5.2f}% on {1:f}\nMax loss: {2:5.2f}% on {3:f}\nLongest growth streak: {4:f} days ({5:f} to {6:f})'.format(max_gain, date1, max_loss, date2, streak_length, date3, date4))
+
