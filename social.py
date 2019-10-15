@@ -35,7 +35,30 @@ There are several cases:
     (3) Last manatee in order should go in the last zero.
     (4) The middle manatees must be in first zero to the next manatee and 
     to the right of the previous manatee.
-    
+""" 
+
+for i in range(len(order) - 1,-1,-1):
+    print(order_list)
+    print(order[i])
+    if order[i] in order_list:
+        print('first loop', order[i])
+        continue
+    if order[i] != order_list:
+        print('second loop', order[i])
+        for j in range(len(order_list)-1,-1,-1):
+            if order_list[j] == 0:
+                order_list[j] = order[i]
+                break
+    if i < len(order) - 1 and order[i+1] in order_list:
+        print('third loop', order[i])
+        for k in range(i+1, -1, -1):
+            if order_list[k] == 0:
+                order_list[k] = order[i]
+                print('check', order_list[k],order[i])
+                break
+
+
+print(order_list)
 # Finally the answer is the first 0 in the order_list
-   
+
        
