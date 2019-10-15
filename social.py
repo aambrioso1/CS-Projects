@@ -1,7 +1,7 @@
 """
-Manatees have some social heirarchy that determines their order and some insist
-on a particluar position.  Need to determine the earliest that a sick manatee
-can be place in the order.
+Manatees have some social hierarchy that determines their order and some insist
+on a particluar position.  Need to determine the earliest that a sick manatee (#1) while following the rules in place for the group.
+can be placed in the order.
 """
 
 #  Input Data
