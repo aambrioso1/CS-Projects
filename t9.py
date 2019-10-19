@@ -1,10 +1,10 @@
 from itertools import *
 
 # List of words manatees may be trying to type with probability
-word_list = ['hell 3', 'hello 4', 'idea 8', 'next 8']
+word_list = ['hell 3', 'hello 4', 'idea 8', 'near 8' , 'neat 8', 'tow 4', 'toy 5']
 
 #Text message that must be interpreted note that 1's are removed
-texts = ['43556', '4332', '23', '6']
+texts = ['43556', '4332', '23', '6328', '869']
 
 
 
@@ -46,7 +46,9 @@ def max_word(answer_pairs):
     MAX = 0
     check = False
     for i in answer_pairs:
-        if int(word_dict[i[1]]) > MAX:
+        value = int(word_dict[i[1]])
+        if int(value) > MAX:
+            MAX = value
             answer = i[0]
             check = True
     if check == False: 
@@ -55,8 +57,10 @@ def max_word(answer_pairs):
 
 # Iterates through each text in the list of texts and and outputs the best word.   If prefix does not appear prints a message
 for text in texts:
+    
     for i in range(len(text)):
-        keys = key_text(text[:i+1])
+        keys =[]
+        keys += key_text(text[:i+1])
         best_word = max_word(keys)
         if best_word != '':
             print(best_word)
