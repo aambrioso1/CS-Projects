@@ -35,6 +35,7 @@ y = [2*t for t in range(100)]
 z = [3*t ** 2 for t in range(100)]
 
 """
+# Parametric spiral found in Thomas Calculus 14th Edition, p. 770.
 t = np.linspace(0, 10 * np.pi, 100)
 x = t * np.cos(t)
 y = t * np.sin(t)
