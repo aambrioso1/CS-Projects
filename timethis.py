@@ -4,6 +4,7 @@
 import time
 from functools import wraps
 
+# We define a wrapper that times the wrapped function.
 def timethis(func):
 	@wraps(func)
 	def wrapper(*args, **kwargs):
@@ -15,11 +16,27 @@ def timethis(func):
 	return wrapper
 
 
-@timethis
+@timethis # This line wraps the countdown(n) function and adds functionality to it.
 def countdown(n):
-	# This a simple counter program to show how to use timethis.py and how it behave.
+	# This a simple counter.  We use it show how to use timethis.py and how it behave.
 	while n>0:
 		n -= 1
 
+# We count down powers of 10 to show timethis in action.
+# This takes about one minute to run.
 for i in range(10):
 	countdown(10 ** i)
+
+"""
+This is what the output looks like on my machine.
+__main__, countdown, 1.0999999999969368e-06
+__main__, countdown, 1.1999999999998123e-06
+__main__, countdown, 5.299999999999749e-06
+__main__, countdown, 4.5699999999995744e-05
+__main__, countdown, 0.0004868000000000025
+__main__, countdown, 0.003983800000000003
+__main__, countdown, 0.0524969
+__main__, countdown, 0.41072200000000003
+__main__, countdown, 4.0116304000000005
+__main__, countdown, 40.135166299999995
+"""
