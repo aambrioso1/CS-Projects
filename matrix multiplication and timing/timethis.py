@@ -41,6 +41,7 @@ __main__, countdown, 4.0116304000000005
 __main__, countdown, 40.135166299999995
 """
 
+# The timeit module can be used to time functions.
 from timeit import timeit
 
 print('import math', timeit('math.sqrt(2)', 'import math'))

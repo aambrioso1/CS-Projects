@@ -1,6 +1,7 @@
 """
 We introduce the numpy matmul operation.
 We show how the timeit.timeit function can be used to time a small fragment of code.
+We also show how cProfile can be used to profile a function.
 """
 
 import numpy as np
@@ -36,6 +37,7 @@ print('Using timeit.timeit on matmul operation with large matrices')
 print(f'The total time for a {SIZE}x{SIZE} matrix using numpy.matmul and a number of trials of {NUM} is {Total_Time} seconds')
 print('*' * 20)
 
+# Here is an example of profiling a function with cProfile
 import cProfile
 print('cProfile results')
 cProfile.run('np.matmul(np.random.randn(100,100), np.random.randn(100,100))')
