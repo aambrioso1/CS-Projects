@@ -1,4 +1,4 @@
-# We implement the Strassen methood for  of mathrix co
+# An implementation of the Strassen methood for matrix multiplication
 # https://en.wikipedia.org/wiki/Strassen_algorithm
 """
 Strassen method for matrix multiplicaton a square matrix 2^n x 2^n matrix into 2^(n-1) square submatices
@@ -19,8 +19,7 @@ def my_matmul(X, Y):
 	return result
 
 """
-We define the functions we need for the Strassen algorithm base on the this 
-Wikipedia article:  
+We define the functions we need for the Strassen algorithm.
 """
 
 # Adds two matrices
@@ -32,7 +31,6 @@ def add(A,B):
 def subtract(A,B):
 	n=len(A)
 	return [[A[i][j] - B[i][j] for j in range(n)] for i in range(n)]
-
 
 #A matrix chopping function.  Cuts a 2^n x 2^n matrix into four square submatrices.
 def chop_mat(M):
@@ -46,7 +44,7 @@ def chop_mat(M):
 	else:
 		return [A00, A10, A01, A11]
 
-
+# This the main part of the algorithm
 def strassen_mul(A,B):
     size = len(A)
     if size == 2:
@@ -104,7 +102,7 @@ def strassen_mul(A,B):
                 C[i + new_size][j + new_size] = C11[i][j]
         return C
     else:
-        print("Error in strassen_mul for len(A)")
+        print('Error in strassen_mul')
 
 # We define a few matrices for testing purposes.
 A = [[1,2], [3,4]]
@@ -113,7 +111,7 @@ B = [[5,6], [7,8]]
 C = [[1,2,3,4], [1,1,1,1], [5,6,7,8], [1,1,1,1]]
 D = [[1,2,3,4], [5,6,7,8], [1,1,1,1], [1,1,1,1]]
 
-n = 4
+n = 5
 E = [[rd.randint(0,1) for j in range(2 ** n)] for i in range(2 ** n)]
 F = [[rd.randint(0,1) for j in range(2 ** n)] for i in range(2 ** n)]
 
@@ -122,13 +120,13 @@ M1 = my_matmul(E, F)
 
 print('E matrix')
 printMat(E)
-print('*'*60)
+print('*' * (2 ** (n+1)))
 print('F matrix')
 printMat(F)
-print('*'*60)
+print('*' * (2 ** (n+1)))
 print('Result of standard algorithm')
 printMat(M1)
-print('*'*60)
-print('result of Strassen')
+print('*' * (2 ** (n+1)))
+print('Result of Strassen')
 printMat(M2)
-print('*'*60)
+print('*' * (2 ** (n+1)))
